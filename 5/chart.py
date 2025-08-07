@@ -13,7 +13,6 @@ num_points = 50
 acquisition_cost = np.random.uniform(50, 500, num_points)
 
 # Lifetime value with positive correlation to acquisition cost + noise
-# Higher acquisition costs generally lead to higher value customers
 lifetime_value = acquisition_cost * np.random.uniform(1.5, 3.0, num_points) + np.random.normal(0, 50, num_points)
 
 # Create DataFrame
@@ -26,8 +25,8 @@ df = pd.DataFrame({
 sns.set_style('whitegrid')
 sns.set_context('talk')  # Presentation-ready text sizes
 
-# Create figure with specific size for 512x512px at 64 dpi
-plt.figure(figsize=(8, 8))
+# FIXED: Use figsize=(5.12, 5.12) with dpi=100 to get exactly 512x512 pixels
+plt.figure(figsize=(5.12, 5.12), dpi=100)
 
 # Create scatterplot using sns.scatterplot()
 scatter = sns.scatterplot(
@@ -48,14 +47,14 @@ plt.ylabel('Customer Lifetime Value (USD)', fontsize=14)
 # Add grid for better readability
 plt.grid(True, alpha=0.3)
 
-# Adjust layout to prevent label cutoff
-plt.tight_layout()
+# FIXED: Use tight_layout with pad=0 and remove bbox_inches='tight'
+plt.tight_layout(pad=0)
 
-# Save chart with exact specifications
-plt.savefig('chart.png', dpi=64, bbox_inches='tight', 
+# FIXED: Save chart without bbox_inches='tight' to maintain exact dimensions
+plt.savefig('chart.png', dpi=100, bbox_inches=None, 
             facecolor='white', edgecolor='none')
 
 # Close the plot to free memory
 plt.close()
 
-print("Chart successfully generated as 'chart.png' with 512x512 dimensions")
+print("Chart successfully generated as 'chart.png' with exactly 512x512 dimensions")
