@@ -11,6 +11,7 @@ def _():
 
 @app.cell
 def _(np, pd):
+    email = "22f3002460@ds.study.iitm.ac.in"
     np.random.seed(0)
     df = pd.DataFrame({
         "X": np.linspace(0, 10, 100),
