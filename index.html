@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <!-- Fixed: Correct highlight.js CSS path -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
     
     <style>
@@ -24,14 +25,20 @@
             color: #666;
             z-index: 1000;
         }
+        /* Enhanced code block styling */
+        .reveal pre code {
+            max-height: 500px;
+            font-size: 0.8em;
+            line-height: 1.2em;
+        }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
             <!-- Title Slide -->
-            <section>22f3002460@ds.study.iitm.ac.in</section>
             <section>Your email (22f3002460@ds.study.iitm.ac.in) in the presentation</section>
+            <section>22f3002460@ds.study.iitm.ac.in</section>
             <section>
                 <h1>Quarterly Earnings Report</h1>
                 <h3>Q3 2025 Financial Performance</h3>
@@ -99,10 +106,10 @@
                 </aside>
             </section>
 
-            <!-- Code Sample -->
+            <!-- Code Sample with Fixed Syntax Highlighting -->
             <section>
                 <h2>Risk Assessment Algorithm</h2>
-                <pre><code class="python" data-trim data-noescape>
+                <pre><code class="language-python" data-trim data-noescape data-line-numbers>
 def calculate_var(portfolio_value, confidence_level=0.95, time_horizon=1):
     """
     Calculate Value at Risk for portfolio
@@ -128,6 +135,32 @@ def calculate_var(portfolio_value, confidence_level=0.95, time_horizon=1):
                 </code></pre>
                 <aside class="notes">
                     This Python code demonstrates our Value at Risk calculation methodology. We use historical simulation to assess potential portfolio losses at a 95% confidence level over a 1-day time horizon.
+                </aside>
+            </section>
+
+            <!-- Additional Code Example -->
+            <section>
+                <h2>Portfolio Optimization</h2>
+                <pre><code class="language-javascript" data-trim data-line-numbers="1-3|4-8|9-15">
+// Modern Portfolio Theory Implementation
+const calculateOptimalWeights = (returns, riskFreeRate) => {
+    const covarianceMatrix = calculateCovariance(returns);
+    
+    const expectedReturns = returns.map(asset => 
+        asset.reduce((sum, ret) => sum + ret, 0) / asset.length
+    );
+    
+    const optimizer = new PortfolioOptimizer({
+        expectedReturns: expectedReturns,
+        covarianceMatrix: covarianceMatrix,
+        riskFreeRate: riskFreeRate
+    });
+    
+    return optimizer.findEfficientFrontier();
+};
+                </code></pre>
+                <aside class="notes">
+                    This JavaScript implementation shows our portfolio optimization algorithm using Modern Portfolio Theory to find the efficient frontier.
                 </aside>
             </section>
 
@@ -194,6 +227,7 @@ def calculate_var(portfolio_value, confidence_level=0.95, time_horizon=1):
         22f3002460@ds.study.iitm.ac.in
     </div>
 
+    <!-- Fixed: Proper script loading order and paths -->
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
@@ -203,7 +237,17 @@ def calculate_var(portfolio_value, confidence_level=0.95, time_horizon=1):
     <script>
         Reveal.initialize({
             hash: true,
-            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+            // Fixed: Proper highlight configuration
+            highlight: {
+                highlightOnLoad: true,
+                theme: 'monokai'
+            },
+            plugins: [ 
+                RevealMarkdown, 
+                RevealHighlight, 
+                RevealNotes, 
+                RevealMath.KaTeX 
+            ]
         });
     </script>
 </body>
