@@ -35,32 +35,8 @@ h2 {
   border-radius: 5px;
 }
 
-.code-block {
-  background-color: #34495e;
-  color: #ecf0f1;
-  padding: 20px;
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-}
-
 .center {
   text-align: center;
-}
-
-/* Background image styling */
-section.bg-image {
-  background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-
-section.bg-image h1,
-section.bg-image h2,
-section.bg-image p {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 5px;
 }
 </style>
 
@@ -98,7 +74,7 @@ section.bg-image p {
 
 ---
 
-<!-- _class: bg-image -->
+<!-- _backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" -->
 ## Version Control for Documentation
 
 ### Why Version Control Matters
@@ -132,41 +108,6 @@ $$S(n) = O(n) \text{ for call stack depth}$$
 
 ---
 
-## Code Documentation Standards
-
-<div class="code-block">
-
-def binary_search(arr, target):
-"""
-Performs binary search on sorted array
-
-Args:
-    arr (list): Sorted list of elements
-    target: Element to search for
-
-Returns:
-    int: Index of target or -1 if not found
-
-Time Complexity: O(log n)
-Space Complexity: O(1)
-"""
-left, right = 0, len(arr) - 1
-
-while left <= right:
-    mid = (left + right) // 2
-    if arr[mid] == target:
-        return mid
-    elif arr[mid] < target:
-        left = mid + 1
-    else:
-        right = mid - 1
-
-return -1
-
-</div>
-
----
-
 ## Mathematical Formulations
 
 ### Big O Notation Relationships
@@ -184,14 +125,6 @@ Where $a \geq 1$, $b > 1$, and $f(n)$ is asymptotically positive.
 
 ## Deployment and Maintenance
 
-### Continuous Integration Pipeline
-
-1. **Markdown Validation**
-2. **Link Checking**
-3. **Style Guide Compliance**
-4. **Multi-format Generation**
-5. **Automated Deployment**
-
 ### Best Practices
 
 - Use semantic versioning for documentation releases
@@ -206,8 +139,6 @@ Where $a \geq 1$, $b > 1$, and $f(n)$ is asymptotically positive.
 
 **Questions & Discussion**
 
----
 Contact: **22f3002460@ds.study.iitm.ac.in**
-GitHub: [Your Repository URL]
 
 *Created with Marp - Markdown Presentation Ecosystem*
