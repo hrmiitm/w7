@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly Earnings Report - Q3 2025</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/monokai.css">
+    
+    <style>
+        .reveal .slides section .fragment.highlight-red.visible {
+            color: #ff2c2d;
+        }
+        .reveal .slides section .fragment.highlight-green.visible {
+            color: #17ff2e;
+        }
+        .email-footer {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            font-size: 14px;
+            color: #666;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>Quarterly Earnings Report</h1>
+                <h3>Q3 2025 Financial Performance</h3>
+                <p>
+                    <small>Prepared by: Technical Consulting Team</small><br>
+                    <small>Contact: <a href="mailto:22f3002460@ds.study.iitm.ac.in">22f3002460@ds.study.iitm.ac.in</a></small>
+                </p>
+                <aside class="notes">
+                    Welcome everyone to our Q3 2025 earnings presentation. Today we'll be covering our financial performance, key metrics, and future outlook. This presentation includes interactive elements and detailed analysis of our quarterly results.
+                </aside>
+            </section>
+
+            <!-- Executive Summary -->
+            <section>
+                <h2>Executive Summary</h2>
+                <ul>
+                    <li class="fragment">Revenue increased by <span class="fragment highlight-green">15.3%</span> YoY</li>
+                    <li class="fragment">Net profit margin improved to <span class="fragment highlight-green">12.8%</span></li>
+                    <li class="fragment">Customer acquisition up <span class="fragment highlight-green">23%</span></li>
+                    <li class="fragment">Operating costs reduced by <span class="fragment highlight-red">8.2%</span></li>
+                </ul>
+                <aside class="notes">
+                    Our Q3 performance exceeded expectations across all major metrics. The revenue growth was driven primarily by our digital transformation initiatives and improved customer retention strategies.
+                </aside>
+            </section>
+
+            <!-- Markdown Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Financial Highlights
+                    
+                    ### Key Performance Indicators
+                    
+                    | Metric | Q3 2024 | Q3 2025 | Change |
+                    |--------|---------|---------|--------|
+                    | Revenue | $2.4B | $2.8B | +15.3% |
+                    | Net Income | $240M | $358M | +49.2% |
+                    | ROE | 8.2% | 12.1% | +390bp |
+                    | EPS | $1.85 | $2.76 | +49.2% |
+                    
+                    *All figures in USD millions except EPS and percentages*
+                </textarea>
+                <aside class="notes">
+                    This slide shows our key financial metrics comparison. Notice the significant improvement in Return on Equity and Earnings Per Share, indicating strong operational efficiency.
+                </aside>
+            </section>
+
+            <!-- Mathematical Formulas -->
+            <section>
+                <h2>Financial Calculations</h2>
+                <div class="fragment">
+                    <h4>Return on Equity (ROE)</h4>
+                    <p>$$ROE = \frac{Net\ Income}{Shareholders'\ Equity} \times 100$$</p>
+                </div>
+                <div class="fragment">
+                    <h4>Price-to-Earnings Ratio</h4>
+                    <p>$$P/E = \frac{Market\ Price\ per\ Share}{Earnings\ per\ Share}$$</p>
+                </div>
+                <div class="fragment">
+                    <h4>Compound Annual Growth Rate</h4>
+                    <p>$$CAGR = \left(\frac{Ending\ Value}{Beginning\ Value}\right)^{\frac{1}{years}} - 1$$</p>
+                </div>
+                <aside class="notes">
+                    These formulas are fundamental to our financial analysis. Our current ROE of 12.1% indicates efficient use of shareholder equity. The P/E ratio helps investors understand our market valuation relative to earnings.
+                </aside>
+            </section>
+
+            <!-- Code Sample -->
+            <section>
+                <h2>Risk Assessment Algorithm</h2>
+                <pre><code class="python" data-trim data-noescape>
+def calculate_var(portfolio_value, confidence_level=0.95, time_horizon=1):
+    """
+    Calculate Value at Risk for portfolio
+    """
+    import numpy as np
+    from scipy import stats
+    
+    # Historical simulation method
+    returns = get_historical_returns(time_horizon)
+    sorted_returns = np.sort(returns)
+    
+    # Calculate VaR at given confidence level
+    var_index = int((1 - confidence_level) * len(sorted_returns))
+    var_return = sorted_returns[var_index]
+    
+    var_amount = portfolio_value * abs(var_return)
+    
+    return {
+        'var_amount': var_amount,
+        'var_percentage': var_return * 100,
+        'confidence_level': confidence_level
+    }
+                </code></pre>
+                <aside class="notes">
+                    This Python code demonstrates our Value at Risk calculation methodology. We use historical simulation to assess potential portfolio losses at a 95% confidence level over a 1-day time horizon.
+                </aside>
+            </section>
+
+            <!-- Animated Performance Metrics -->
+            <section>
+                <h2>Performance Breakdown</h2>
+                <div style="display: flex; justify-content: space-around;">
+                    <div class="fragment fade-in-then-semi-out">
+                        <h4>Digital Banking</h4>
+                        <p>+28% Growth</p>
+                    </div>
+                    <div class="fragment fade-in-then-semi-out">
+                        <h4>Investment Services</h4>
+                        <p>+18% Growth</p>
+                    </div>
+                    <div class="fragment fade-in">
+                        <h4>Corporate Lending</h4>
+                        <p>+12% Growth</p>
+                    </div>
+                </div>
+                <div class="fragment">
+                    <p><strong>Combined portfolio performance exceeded targets by 22%</strong></p>
+                </div>
+                <aside class="notes">
+                    Digital banking continues to be our strongest growth driver, followed by investment services. Corporate lending showed steady growth despite market headwinds.
+                </aside>
+            </section>
+
+            <!-- Future Outlook -->
+            <section>
+                <h2>Q4 2025 Outlook</h2>
+                <ul>
+                    <li class="fragment fade-up">Continue digital transformation initiatives</li>
+                    <li class="fragment fade-up">Expand into emerging markets</li>
+                    <li class="fragment fade-up">Implement AI-driven risk management</li>
+                    <li class="fragment fade-up">Target 20% revenue growth for Q4</li>
+                </ul>
+                <div class="fragment">
+                    <blockquote>
+                        "Our strong Q3 performance positions us well for continued growth and market expansion."
+                    </blockquote>
+                </div>
+                <aside class="notes">
+                    Looking ahead to Q4, we're confident in our strategic direction. The AI implementation in risk management is expected to reduce operational costs by an additional 5-7%.
+                </aside>
+            </section>
+
+            <!-- Thank You Slide -->
+            <section>
+                <h1>Thank You</h1>
+                <h3>Questions & Discussion</h3>
+                <p>
+                    <small>Contact: <a href="mailto:22f3002460@ds.study.iitm.ac.in">22f3002460@ds.study.iitm.ac.in</a></small>
+                </p>
+                <aside class="notes">
+                    Thank you for your attention. I'm now open to any questions about our Q3 performance or future strategy. Please feel free to reach out via email for any follow-up discussions.
+                </aside>
+            </section>
+        </div>
+    </div>
+
+    <!-- Email footer -->
+    <div class="email-footer">
+        22f3002460@ds.study.iitm.ac.in
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+        });
+    </script>
+</body>
+</html>
