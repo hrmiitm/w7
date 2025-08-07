@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly Earnings Report - Q3 2025</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/monokai.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- Title Slide -->
+            <section>
+                <h1>Quarterly Earnings Report</h1>
+                <h3>Q3 2025 Financial Performance</h3>
+                <p>
+                    <small>Prepared by: <a href="mailto:22f3002460@ds.study.iitm.ac.in">Technical Consultant</a></small>
+                </p>
+                <aside class="notes">
+                    Welcome everyone to our Q3 2025 earnings presentation. Today we'll cover our financial performance, key metrics, and strategic outlook.
+                </aside>
+            </section>
+
+            <!-- Markdown Slide -->
+            <section data-markdown>
+                <textarea data-template>
+                    ## Executive Summary
+                    
+                    ### Key Highlights
+                    - **Revenue Growth**: 15.2% YoY increase
+                    - **Net Profit Margin**: 18.5%
+                    - **Customer Acquisition**: 250K new clients
+                    - **Digital Transformation**: 85% completion
+                    
+                    > *"Our strategic investments in technology and customer experience continue to drive sustainable growth."*
+                </textarea>
+                <aside class="notes">
+                    This slide shows our key performance indicators. Notice the strong revenue growth and improved profit margins.
+                </aside>
+            </section>
+
+            <!-- Animated Fragments Slide -->
+            <section>
+                <h2>Financial Performance Breakdown</h2>
+                <div class="fragment fade-in-then-semi-out">
+                    <h3>Revenue Streams</h3>
+                    <ul>
+                        <li class="fragment highlight-red">Investment Banking: $2.3B (+12%)</li>
+                        <li class="fragment highlight-green">Retail Banking: $1.8B (+18%)</li>
+                        <li class="fragment highlight-blue">Digital Services: $890M (+25%)</li>
+                    </ul>
+                </div>
+                <div class="fragment">
+                    <p><strong>Total Revenue: $5.0B</strong></p>
+                </div>
+                <aside class="notes">
+                    Walk through each revenue stream, highlighting the growth in digital services which shows our successful digital transformation.
+                </aside>
+            </section>
+
+            <!-- Code Sample Slide -->
+            <section>
+                <h2>Risk Assessment Algorithm</h2>
+                <pre><code class="python" data-trim data-noescape>
+def calculate_risk_score(portfolio_data):
+    """
+    Calculate comprehensive risk score for portfolio
+    """
+    volatility = np.std(portfolio_data['returns'])
+    var_95 = np.percentile(portfolio_data['returns'], 5)
+    sharpe_ratio = np.mean(portfolio_data['returns']) / volatility
+    
+    # Risk scoring formula
+    risk_score = (volatility * 0.4) + (abs(var_95) * 0.4) + (1/sharpe_ratio * 0.2)
+    
+    return {
+        'risk_score': risk_score,
+        'volatility': volatility,
+        'var_95': var_95,
+        'sharpe_ratio': sharpe_ratio
+    }
+                </code></pre>
+                <aside class="notes">
+                    This is our proprietary risk assessment algorithm that we've implemented across all trading desks.
+                </aside>
+            </section>
+
+            <!-- Mathematical Equations Slide -->
+            <section>
+                <h2>Key Financial Formulas</h2>
+                <div class="fragment">
+                    <h3>Return on Equity (ROE)</h3>
+                    <p>$$ROE = \frac{\text{Net Income}}{\text{Shareholders' Equity}} \times 100$$</p>
+                    <p>Current ROE: <strong>22.8%</strong></p>
+                </div>
+                <div class="fragment">
+                    <h3>Capital Adequacy Ratio</h3>
+                    <p>$$CAR = \frac{\text{Tier 1 Capital + Tier 2 Capital}}{\text{Risk-Weighted Assets}} \times 100$$</p>
+                    <p>Current CAR: <strong>14.2%</strong> (Above regulatory minimum of 10.5%)</p>
+                </div>
+                <div class="fragment">
+                    <h3>Net Interest Margin</h3>
+                    <p>$$NIM = \frac{\text{Interest Income} - \text{Interest Expense}}{\text{Average Earning Assets}}$$</p>
+                    <p>Current NIM: <strong>3.45%</strong></p>
+                </div>
+                <aside class="notes">
+                    These are our core financial health indicators. All metrics are well above industry averages and regulatory requirements.
+                </aside>
+            </section>
+
+            <!-- Conclusion Slide -->
+            <section>
+                <h2>Strategic Outlook</h2>
+                <ul>
+                    <li class="fragment">Continue digital transformation initiatives</li>
+                    <li class="fragment">Expand into emerging markets</li>
+                    <li class="fragment">Strengthen cybersecurity infrastructure</li>
+                    <li class="fragment">Focus on sustainable finance products</li>
+                </ul>
+                <div class="fragment">
+                    <h3>Q4 2025 Targets</h3>
+                    <p>Revenue: $5.2B | ROE: 24% | CAR: >15%</p>
+                </div>
+                <aside class="notes">
+                    Wrap up with our strategic priorities and ambitious but achievable targets for Q4.
+                </aside>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/plugin/math/math.js"></script>
+
+    <script>
+        Reveal.initialize({
+            hash: true,
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+        });
+    </script>
+</body>
+</html>
