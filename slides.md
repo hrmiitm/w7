@@ -73,8 +73,8 @@ h2 {
 - Release Notes
 
 ---
-
-<!-- _backgroundImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" -->
+![bg](https://i.insider.com/5fbe98c550e71a0011557672?width=1300&format=jpeg&auto=webp)
+<!-- _backgroundImage: "https://i.insider.com/5fbe98c550e71a0011557672?width=1300&format=jpeg&auto=webp" -->
 ## Version Control for Documentation
 
 ### Why Version Control Matters
