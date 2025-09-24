@@ -1,5 +1,4 @@
-# .github/workflows/cache-demo.yml
-name: Cache Demo Workflow
+name: prime-cache-0a1c1f8
 
 on:
   push:
