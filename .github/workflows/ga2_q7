@@ -1,0 +1,69 @@
+# .github/workflows/cache-demo.yml
+name: Cache Demo Workflow
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  cache-demo:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Cache dependencies with prime key
+      id: cache-prime
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          node_modules
+        key: cache-0a1c1f8
+        restore-keys: |
+          cache-0a1c1f8-
+          cache-
+    
+    - name: prime-cache-0a1c1f8
+      run: |
+        if [ "${{ steps.cache-prime.outputs.cache-hit }}" == "true" ]; then
+          echo "✅ Cache HIT - Dependencies restored from cache-0a1c1f8"
+          echo "Cache status: HIT"
+        else
+          echo "❌ Cache MISS - Will install dependencies and create cache-0a1c1f8"
+          echo "Cache status: MISS"
+        fi
+        echo "Cache key used: cache-0a1c1f8"
+        echo "Cache hit result: ${{ steps.cache-prime.outputs.cache-hit }}"
+    
+    - name: Install dependencies
+      if: steps.cache-prime.outputs.cache-hit != 'true'
+      run: |
+        echo "Installing npm dependencies..."
+        npm install
+        echo "Dependencies installed successfully"
+    
+    - name: Verify cache contents
+      run: |
+        echo "Verifying cached contents..."
+        if [ -d "node_modules" ]; then
+          echo "✅ node_modules directory exists"
+          echo "📦 Total packages: $(ls node_modules 2>/dev/null | wc -l)"
+        else
+          echo "❌ node_modules directory not found"
+        fi
+        
+        if [ -d "~/.npm" ]; then
+          echo "✅ npm cache directory exists"
+        else
+          echo "❌ npm cache directory not found"
+        fi
