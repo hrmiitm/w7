@@ -1,4 +1,4 @@
-name: CI with Caching
+name: prime-cache-0a1c1f8
 
 on:
   push:
