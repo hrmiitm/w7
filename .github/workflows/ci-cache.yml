@@ -1,0 +1,58 @@
+name: CI with Caching
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: prime-cache-0a1c1f8
+      id: cache-step
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          node_modules
+          .cache
+        key: cache-0a1c1f8
+        restore-keys: |
+          cache-0a1c1f8-fallback
+    
+    - name: Echo cache result
+      run: |
+        if [ "${{ steps.cache-step.outputs.cache-hit }}" == "true" ]; then
+          echo "Cache HIT: Successfully restored cache with key cache-0a1c1f8"
+        else
+          echo "Cache MISS: No cache found for key cache-0a1c1f8, will create new cache"
+        fi
+    
+    - name: Setup Node.js (example dependency)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    
+    - name: Create dummy dependencies
+      run: |
+        mkdir -p ~/.npm
+        mkdir -p node_modules
+        mkdir -p .cache
+        echo "Creating some dummy cached content..."
+        echo "dummy-dependency-content" > node_modules/dummy.txt
+        echo "npm-cache-content" > ~/.npm/cache.txt
+        echo "general-cache-content" > .cache/cache.txt
+    
+    - name: Verify cached content
+      run: |
+        echo "Contents of cached directories:"
+        ls -la ~/.npm/ || echo "~/.npm is empty"
+        ls -la node_modules/ || echo "node_modules is empty"  
+        ls -la .cache/ || echo ".cache is empty"
