@@ -15,7 +15,9 @@ I already knew ...
 - [ ] I can create an annotated tag (`git tag -a v0.1.0`) and push it to GitHub
 - [ ] I can write a meaningful commit message (not "fixed stuff" or "final.py")
 
-
+--- After Day-5 ---
+I already knew ...
+---
 
 --- Feedback (Suggestions for the TDS Team) ---
 My feedback ...
